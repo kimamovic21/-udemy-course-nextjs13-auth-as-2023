@@ -1,0 +1,101 @@
+NextJS 13 Auth Project
+
+-instaliramo projekt npx create-next-app@latest
+-https://stackoverflow.com/questions/76829250/nextjs-server-error-could-not-find-the-module
+-otvorimo web stranicu https://www.prisma.io/
+-instaliramo prizma pakete u terminalu
+-u terminal ukucamo komandu npm install prisma --save-dev
+-u terminal ukucamo komandu npx prisma init --datasource-provider postgresql
+-otvorimo web stranicu https://neon.tech/ i registrujemo se
+-kreiramo novi projekt
+-kreiramo novu database
+-u SQL Editor ukucamo boiler plate kod
+-instaliramo VS Code ekstenziju Prisma
+-u .gitignore fajl dodajemo .env
+-napravimo izmjenu u .env fajlu
+-u terminal ukucamo npx prisma db pull
+-u terminal ukucamo npx prisma generate
+-u fajlu schema.prizma kreiramo model User
+-u terminal ukucamo komandu npx prisma migrate dev --name create_user_model
+-u terminal ukucamo komandu npx prisma studio
+-kad se otvori http://localhost:5555/ kliknemo na User 
+-kliknemo Add record
+-u terminal ukucamo komandu npm install @prisma/client
+-kreiramo folder helpers
+-u folderu helpers kreiramo prisma.js fajl
+-u prisma.js fajlu importujemo PrismaClient
+-kreiramo i eksportujemo varijablu prisma
+-otvorimo web stranicu https://next-auth.js.org/
+-u terminal ukucamo komandu npm install next-auth
+-u folderu app kreiramo foldere - api - auth - [...nextauth]
+-u folderu [...nextauth] kreiramo route.js fajl
+-u fajl route.js importujemo NexAuth i CredentialsProvider
+-kreiramo varijablu const authHandler
+-u varijabli authHandler kreiramo niz providers
+-otvorimo link http://localhost:3000/api/auth/signin
+-u varijabli authHandler kreiramo objekt pages
+-u folderu app kreiramo folder login
+-u folderu login kreiramo page.js fajl
+-kreiramo folder components
+-u folderu components kreiramo komponentu LoginForm.jsx
+-u komponenti LoginForm.jsx, kreiramo tri funkcije useState()
+-kreiramo varijablu const router
+-kreiramo dvije funkcije handleEmailChange() i handlePasswordChange()
+-kreiramo funkciju clearInputs()
+-kreiramo funkciju handleSubmit()
+-u funkciju handleSubmit() dodajemo funkciju signIn()
+-u return izjavi form elementu dodajemo dogadaj onSubmit
+-u onSubmit dogadaj proslijedujemo funkciju handleSubmit()
+-kreiramo input elemente
+-input elementima dodajemo atribute i dogadaje onChange
+-u return izjavi dodajemo uslov {error && (<p>{error}</p>)}
+-elementima dodajemo TailwindCSS klase
+-u page.js fajl importujemo komponentu LoginForm.jsx
+-https://stackoverflow.com/questions/74421327/nextrouter-was-not-mounted-next-js
+-u folderu app kreiramo folder register
+-u folderu register kreiramo page.js fajl
+-u folderu components kreiramo komponentu RegistrationForm.jsx
+-u register/page.js fajl importujemo komponentu RegistrationForm.jsx
+-u folderu api kreiramo folder register
+-u folderu register kreiramo route.js fajl
+-u terminal kucamo komandu npm install bcrypt --save
+-u register/route.js fajl importujemo prisma, NextResponse, 
+-kreiramo funkciju POST()
+-u funkciji POST() kreiramo blokove koda try - catch
+-u Postmanu kreiramo kolekciju NextJS 13 Auth
+-kreiramo zahtjev POST
+-u folderu api kreiramo folder login
+-u folderu login kreiramo route.js fajl
+-u terminal ukucamo komandu npm install jsonwebtoken --save
+-u folderu helpers kreiramo jwt.js fajl
+-otvorimo web stranicu https://onlinehashtools.com/generate-random-sha256-hash
+-u .env fajlu kreiramo varijablu JWT_SECRET_KEY
+-u jwt.js fajl importujemo jwt
+-kreiramo objekt DEFAULT_OPTIONS
+-kreiramo funkcije signJwtAccessToken() i verifyJwt()
+-u funkciji verifyJwt kreiramo blokove koda try - catch
+-kreiramo folder services
+-u folderu services kreiramo auth.js fajl
+-u auth.js fajlu kreiramo funkciju registerUser()
+-u komponentu RegistrationForm.jsx importujemo funkciju registerUser()
+-u .env fajlu kreiramo varijable NEXTAUTH_URL, NEXTAUTH_SECRET
+-kreiramo middleware.js fajl
+-u middleware.js fajlu kreiramo objekt config
+-u folderu components kreiramo komponentu LogoutButton.jsx
+-u page.js fajl importujemo komponentu LogoutButton.jsx
+-u folderu api kreiramo folder posts
+-u folderu posts kreiramo page.js
+-u fajlu schema.prisma dodajemo novi model Post
+-u terminal ukucamo komandu npx prisma generate
+-u terminal ukucamo komandu npx prisma migrate dev --name add_post_model
+-u terminal ukucamo komandu npx prisma studio
+-u folderu api, kreiramo folder post
+-u folderu post kreiramo page.js fajl
+-u page.js fajlu kreiramo asinhronu funkciju GET(request)
+-u folderu services kreiramo post.js fajl
+-u folderu components kreiramo komponentu PostList.jsx
+-u komponenti PostList.jsx kreiramo const [postList, setPostList] = useState()
+-kreiramo folder providers
+-u folderu providers kreiramo AuthProviders.js fajl
+-u layout.js fajl importujemo AuthProviders.js fajl
+-
