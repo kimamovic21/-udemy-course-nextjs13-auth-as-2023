@@ -98,4 +98,10 @@ NextJS 13 Auth Project
 -kreiramo folder providers
 -u folderu providers kreiramo AuthProviders.js fajl
 -u layout.js fajl importujemo AuthProviders.js fajl
--
+
+
+.env fajl
+DATABASE_URL="postgres://..."
+JWT_SECRET_KEY=SHA-256
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=SHA-256

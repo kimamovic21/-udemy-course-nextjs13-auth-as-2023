@@ -59,11 +59,11 @@ const RegistrationForm = () => {
             >
                 Register
             </button>
-            {error &&
+            {error && (
                 <p className="text-red-500 font-bold text-center">
                     {error}
                 </p>
-            }
+            )}
         </form>
     )
 }

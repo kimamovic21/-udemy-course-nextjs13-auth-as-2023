@@ -12,11 +12,13 @@ const LoginForm = () => {
 
     const handleEmailChange = e => setEmail(e.target.value);
     const handlePasswordChange = e => setPassword(e.target.value);
+
     const clearInputs = () => {
         setEmail("");
         setPassword("");
         setError("");
     }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         signIn("credentials", {
@@ -61,11 +63,11 @@ const LoginForm = () => {
             >
                 Log in
             </button>
-            {error &&
+            {error && (
                 <p className="text-red-500 font-bold text-center">
                     {error}
                 </p>
-            }
+            )}
         </form>
     )
 }

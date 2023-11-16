@@ -1,4 +1,4 @@
-export const getAppPosts = (accessToken) => {
+export const getAllPosts = (accessToken) => {
     return new Promise((resolve, reject) => {
         fetch('/api/post', {
             method: 'GET',

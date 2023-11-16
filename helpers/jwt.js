@@ -1,14 +1,14 @@
 import jwt from 'jsonwebtoken';
 
 const DEFAULT_OPTIONS = {
-    expiresIn: '1h'
-}
+    expiresIn: '24h'
+};
 
 export const signJwtAccessToken = (payload, options = DEFAULT_OPTIONS) => {
     const secretKey = process.env.JWT_SECRET_KEY;
     const token = jwt.sign(payload, secretKey, options);
     return token;
-}
+};
 
 export const verifyJwt = (token) => {
     try {
@@ -19,5 +19,5 @@ export const verifyJwt = (token) => {
     catch (e) {
         console.error(e);
         return null;
-    }
-}
+    };
+};

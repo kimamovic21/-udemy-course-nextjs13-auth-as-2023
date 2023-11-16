@@ -8,17 +8,14 @@ export async function GET(request) {
         const decoded = verifyJwt(accessToken);
 
         if (!accessToken || !decoded) {
-            return NextResponse.json({message: 'You are not authorized to get this data'}, {status: 401})
-        };
+            return NextResponse.json({ message: "You are not authorized to get this data" }, { status: 401 });
+        }
 
         const posts = await prisma.post.findMany();
-        return NextResponse.json({posts}, {status: 200});
+        return NextResponse.json({ posts }, { status: 200 });
     }
-    catch(e) {
+    catch (e) {
         console.error(e);
-        return NextResponse.json(
-            {message: 'Something went wrong while trying to load the posts!', result: e},
-            {status: 500}
-        );
-    };
+        return NextResponse.json({ message: "Something went wrong while trying to load the posts", result: e }, { status: 500 });
+    }
 }

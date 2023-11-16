@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useState, useEffect } from 'react';
 import { getAllPosts } from '@/services/post';
 import { useSession } from 'next-auth/react';
@@ -17,7 +17,7 @@ const PostList = () => {
     }, [session])
 
     return (
-        <div className="flex flex-col space-y-12 items-center">
+        <div className="flex flex-col space-y-12 items-center overflow-y-scroll p-2">
             {postList && postList.map(post => (
                 <div className="group text-white flex justify-between border-4 border-white rounded-lg hover:bg-green-600 hover:border-green-600 duration-300 cursor-pointer">
                     <div>
